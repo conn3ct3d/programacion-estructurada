@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Swing Documentation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        pre { background: #f5f5f5; padding: 10px; border-radius: 5px; }
+        code { font-size: 1em; }
+    </style>
+</head>
+<body>
+    <h1>Java Swing Documentation</h1>
+    <h2>1. Creating a Basic Swing Application</h2>
+    <pre><code class="language-java">import javax.swing.*;
+
+public class BasicSwingApp {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Basic Swing App");
+            frame.setSize(400, 300);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+        });
+    }
+}</code></pre>
+
+    <h2>2. Common Swing Components</h2>
+    <h3>(a) JFrame – Main Window</h3>
+    <pre><code class="language-java">JFrame frame = new JFrame("My Window");
+frame.setSize(500, 400);
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+frame.setVisible(true);</code></pre>
+
+    <h3>(b) JButton – Button</h3>
+    <pre><code class="language-java">JButton button = new JButton("Click Me!");
+frame.add(button);
+
+button.addActionListener(e -> System.out.println("Button Clicked!"));</code></pre>
+
+    <h3>(c) JLabel – Label</h3>
+    <pre><code class="language-java">JLabel label = new JLabel("Hello, Swing!");
+frame.add(label);</code></pre>
+
+    <h3>(d) JTextField – Input Field</h3>
+    <pre><code class="language-java">JTextField textField = new JTextField(20);
+frame.add(textField);</code></pre>
+
+    <h3>(e) JPanel – Container for Components</h3>
+    <pre><code class="language-java">JPanel panel = new JPanel();
+panel.add(new JButton("OK"));
+panel.add(new JButton("Cancel"));
+frame.add(panel);</code></pre>
+
+    <h3>(f) JOptionPane – Simple Dialog Boxes</h3>
+    <pre><code class="language-java">JOptionPane.showMessageDialog(frame, "Hello, this is a message box!");</code></pre>
+
+    <h2>3. Layout Managers</h2>
+    <pre><code class="language-java">JPanel panel = new JPanel();
+panel.setLayout(new FlowLayout());</code></pre>
+
+    <h2>4. Event Handling</h2>
+    <pre><code class="language-java">button.addActionListener(e -> System.out.println("Button Clicked!"));</code></pre>
+
+    <h2>5. Running the GUI on the Event Dispatch Thread (EDT)</h2>
+    <pre><code class="language-java">SwingUtilities.invokeLater(() -> {
+    JFrame frame = new JFrame("My GUI");
+    frame.setVisible(true);
+});</code></pre>
+
+    <h2>Conclusion</h2>
+    <p>The <code>javax.swing</code> package provides an easy way to build GUI applications in Java. However, for modern applications, JavaFX (<code>javafx.*</code>) is often recommended as it has better styling and performance.</p>
+</body>
+</html>
